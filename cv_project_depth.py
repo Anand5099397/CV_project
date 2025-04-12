@@ -31,9 +31,9 @@ transform = Compose([
 ])
 
 # Load and preprocess the image
-image_path = "IMG-20250409-WA0019.jpg"# Replace with your image path
-image = Image.open(image_path).convert('RGB') # Load as RGB using PIL input_image = transform(image).unsqueeze(0).to(device)  # Add batch dimension
-input_image = transform(image).unsqueeze(0).to(device)  # Add batch dimension #This line was part of the comment above, causing the error
+image_path = "IMG-20250409-WA0019.jpg"
+image = Image.open(image_path).convert('RGB') 
+input_image = transform(image).unsqueeze(0).to(device)  
 # Predict depth
 with torch.no_grad():
     depth_pred = model(input_image)
